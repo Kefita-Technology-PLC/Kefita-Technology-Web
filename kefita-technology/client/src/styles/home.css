@@ -1,0 +1,287 @@
+.home-page {
+  h1 {
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 25px;
+    color: #3166aa;
+  }
+
+  h4 {
+    color: #0056b3;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+  @media (max-width: 1024px) {
+    .hero-image img {
+      width: 250px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.hero-home {
+  flex: 1;
+  padding: 30px;
+  margin-left: 20px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+}
+.hero-home p {
+  padding-top: 20px;
+  max-width: 650px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #3166aa;
+}
+.explore {
+  border-radius: 20px;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: #0056b3;
+}
+.button .explore:hover {
+  background-color: #1b73d1;
+}
+
+.hero-container {
+  margin: 10px auto;
+  padding: 10px;
+
+  width: 100%;
+  background-color: #f2fffe;
+
+  gap: 30px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  @media (max-width: 1440px) {
+    padding-left: 30px;
+
+    padding-right: 30px;
+  }
+}
+
+.hero-image {
+  flex: 1;
+
+  padding: 0px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.hero-image img {
+  width: 384px;
+  border-radius: 30px;
+  margin-top: 80px;
+  max-width: 420px;
+}
+.profile-image {
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-image img {
+  width: 110px;
+  border-radius: 50%;
+  padding: 7px;
+}
+.wrapper {
+  background-color: #3166aa;
+  padding: 4% 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  line-height: 1.5;
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.content h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.content p {
+  font-size: 22px;
+  color: white;
+  margin: 5px 0 20px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.subscription-form input[type="email"] {
+  padding: 15px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.subscription-form button {
+  padding: 10px 20px;
+  color: white;
+  background-color: #2970c7;
+  border: none;
+  margin-top: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.subscription-form button:hover {
+  background-color: #1b73d1;
+}
+
+@media (max-width: 600px) {
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .subscription-form {
+    gap: 10px;
+  }
+
+  .subscription-form input[type="email"] {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .subscription-form button {
+    padding: 8px 16px;
+  }
+}
+
+.Testimonial-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+
+  padding: 6% 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2fffe;
+  width: 100%;
+}
+.client {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  text-align: center;
+}
+.Testimonial-card {
+  margin-left: 5px;
+  color: #0056b3;
+  border-radius: 10px;
+  padding: 10px;
+  width: 350px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0px 0px 3px #0056be;
+  @media (max-width: 767px) {
+    width: 300px;
+    max-width: 450px;
+    padding: 6px;
+  }
+  .client {
+    font-size: 16px;
+    position: relative;
+  }
+}
+.Testimonial-card h4 {
+  padding: 6px;
+}
+.single-review p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+  padding: 6px;
+  color: #0056b3;
+}
+
+#partnership {
+  width: 100%;
+  padding: 50px 10px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+
+.track {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    padding: 2% 8px;
+  }
+}
+.partnership-title {
+  position: relative;
+  /* top: 5px; */
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10px;
+  left: 20px;
+  text-align: center;
+}
+.track img {
+  width: 120px;
+}
+.track .kuraz {
+  width: 70px;
+  @media (max-width: 1024px) {
+    margin-right: 50px;
+  }
+}

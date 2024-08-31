@@ -1,0 +1,258 @@
+
+
+.about-us {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #f2fffe;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #3166aa;
+  font-weight: 700;
+}
+
+.about-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.who-we-are {
+  text-align: center;
+  padding: 6rem 1rem;
+  background-color: #f2fffe;
+}
+
+.who-we-are h2 {
+  font-size: 2.5rem;
+  color: #3166aa;
+  margin-bottom: 3rem;
+}
+
+.who-we-are-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.who-we-are-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.who-we-are-images img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image1,
+.image2,
+.image3,
+.image4 {
+  position: relative;
+}
+.image1 {
+  top: 60px;
+  left: 40px;
+  bottom: 10px;
+  width: 60%;
+  height: 250px;
+}
+.image2 {
+  top: 10px;
+  left: -15%;
+  height: 220px;
+  width: 60%;
+}
+.image3 {
+  top: 90px;
+  left: 40px;
+  height: 250px;
+  width: 60%;
+}
+.image4 {
+  top: 10px;
+  left: -40px;
+  width: 60%;
+  height: 250px;
+}
+
+.who-we-are-content {
+  text-align: left;
+  padding: 20px;
+  margin-left: -150px;
+}
+
+.who-we-are-content ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 5px;
+  color: #3166aa;
+}
+.who-we-are-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 490px;
+  color: #3166aa;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.who-we-are-content h3 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin: 0;
+}
+.h3-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: -10px;
+}
+
+.cross_eye {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.our-team {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #3166aa;
+  color: white;
+  margin-bottom: -60px;
+}
+
+.our-team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fafafa;
+  margin-top: 5px;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.team-member {
+  background: #fafafabf;
+  padding: 1.5rem;
+  text-align: center;
+  width: 210px;
+  height: 260px;
+  max-width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  padding: 2px;
+  background: linear-gradient(180deg, #92e3a9 0%, #007dab 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.team-member h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+
+  color: black;
+}
+
+.team-member p {
+  margin: 0;
+  color: black;
+}
+
+.team-member:nth-child(1),
+.team-member:nth-child(3) {
+  grid-row: 1;
+}
+
+.team-member:nth-child(2),
+.team-member:nth-child(4) {
+  grid-row: 2;
+}
+.team-member:nth-child(1) {
+  margin-top: 30px;
+  margin-left: 90px;
+}
+.team-member:nth-child(3) {
+  /*next to team1*/
+  margin-top: 130px;
+  margin-left: -30px;
+}
+.team-member:nth-child(2) {
+  /*down team1*/
+  margin-top: -90px;
+  margin-left: 90px;
+}
+.team-member:nth-child(4) {
+  /*team2*/
+  margin-left: -30px;
+  margin-top: 10px;
+}
+.team-member:nth-child(5) {
+  /*next to team2*/
+  margin-left: -90px;
+  margin-top: 30px;
+}
+.team-member:nth-child(7) {
+  /*down team3*/
+  margin-left: -90px;
+  margin-top: -90px;
+}
+.team-member:nth-child(6) {
+  /*down team3*/
+  margin-left: -150px;
+  margin-top: 130px;
+}
+.team-member:nth-child(8) {
+  /*down team3*/
+  margin-left: -150px;
+  margin-top: 10px;
+}

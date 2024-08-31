@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Kefita Technology PLC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../../public/favicon.png" alt="" />
+        <h6>Kefita Technology P.L.C</h6>
+      </div>
+      <ul class="navlist">
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="./service.html">Services</a>
+        </li>
+        <li>
+          <a href="./about.html">About</a>
+        </li>
+
+        <li><a href="./Blog.html">Blog</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <section class="contact-us">
+      <div class="contact-us-top">
+        <div class="left-form">
+          <h1>Contact Us</h1>
+          <form
+            id="contactForm"
+            method="POST"
+            action="http://localhost:5500/api/contact"
+          >
+            <div class="name element">
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="email element">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="subject element">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="note element">
+              <textarea
+                name="message"
+                id="note"
+                required
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <div class="submit element">
+              <input type="submit" value="Send Message" />
+            </div>
+            <div id="responseMessage"></div>
+          </form>
+        </div>
+        <div class="right-picture">
+          <img src="../assets/images/Contact us.png" alt="Contact Us Image" />
+        </div>
+      </div>
+
+      <div class="contact-us-map">
+        <h1>Find Us on Google Maps</h1>
+        <p>
+          We are committed to delivering innovative and high-quality solutions
+          that drive business success.
+        </p>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.2077685010816!2d38.75776001744385!3d9.030456384442135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b84b4b2f29139%3A0xa73d5b7635001a8!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1693131946432!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer>
+      <section class="ftr-main">
+        <div class="ftr-items contact-info">
+          <h2>Contact Us</h2>
+          <ul>
+            <li>
+              <a href="tel:+251912345678"
+                ><i class="fa fa-phone"></i> +251 91 234 5678</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-map-marker"></i> Addis Ababa, Akaki Kality,
+                Cabey Building, 3rd Floor, Room 304</a
+              >
+            </li>
+            <li>
+              <a href="mailto:kefitatech@gmail.com"
+                ><i class="fa fa-envelope"></i> kefitatech@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="ftr-items links">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./service.html">Service</a></li>
+            <li><a href="./Blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="ftr-items social-media">
+          <h2>Follow Us</h2>
+          <ul class="ftr-list">
+            <li>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-telegram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="footer-bottom">
+        <p>&copy;2024 Kefita Technology PLC. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/contact.js"></script>
+  </body>
+</html>
