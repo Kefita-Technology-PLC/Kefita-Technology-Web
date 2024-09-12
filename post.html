@@ -1,0 +1,211 @@
+<html lang="en"></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./post3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <style>
+    /* General styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+
+    }
+
+    .post {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center; 
+    }
+
+    /* Styling for the title */
+    .post_title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Styling for the image */
+    .post_image {
+      max-width: 100%; 
+      width: 60%; 
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px; 
+    }
+
+    /* Styling for the content */
+    .post_content {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* Styling for the publication date */
+    .post_date {
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./images/KifetaLogo.png" alt="" />
+        <h6>Kefita Technology P.L.C</h6>
+      </div>
+
+      <ul class="navlist">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <main>
+      <div id="postContainer"></div>
+    </main>
+
+    <footer>
+      <section class="ftr-main">
+        <div class="ftr-items contact-info">
+          <h2>Contact Us</h2>
+          <ul>
+            <li>
+              <a href="tel:+251912345678"
+                ><i class="fa fa-phone"></i> +251 91 234 5678</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-map-marker"></i> Addis Ababa, Akaki Kality,
+                Cabey Building, 3rd Floor, Room 304</a
+              >
+            </li>
+            <li>
+              <a href="mailto:kefitatech@gmail.com"
+                ><i class="fa fa-envelope"></i> kefitatech@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="ftr-items links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="ftr-items social-media">
+          <h2>Follow Us</h2>
+          <ul class="ftr-list">
+            <li>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-telegram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="footer-bottom">
+        <p>&copy;2024 Kefita Technology PLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+
+    <script>
+      // Function to fetch and display the blog post
+      async function fetchPost() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const blogId = urlParams.get('blogId');
+          
+          if (!blogId) {
+              document.getElementById('postContainer').innerHTML = '<p>Post not found.</p>';
+              return;
+          }
+  
+          try {
+              const response = await fetch(`http://localhost:3000/blogs/${blogId}`);
+  
+              if (!response.ok) {
+                  throw new Error('Failed to fetch post');
+              }
+  
+              const post = await response.json();
+  
+              if (!post || !post._id) {
+                  document.getElementById('postContainer').innerHTML = '<p>Post not found.</p>';
+                  return;
+              }
+  
+              // Convert newlines to <br> tags to preserve line breaks
+              const formattedContent = post.content
+                  .trim()
+                  .replace(/\n/g, '<br>'); // Replace newlines with <br>
+  
+              // Ensure the image path is correct (adjust the path if necessary)
+              const imageUrl = `http://localhost:3000/uploads/${post.image}`;
+  
+              // Display the blog post content
+              document.getElementById('postContainer').innerHTML = `
+                  <article class="post">
+                      <img class="post_image" src="${imageUrl}" alt="${post.title}" />
+                      <h1 class="post_title">${post.title}</h1>
+                      <p class="post_description"><em>${post.description}</em></p>
+                      <div class="post_content">${formattedContent}</div>
+                      <p class="post_date">Published on ${new Date(post.createdAt).toLocaleDateString()}</p>
+                  </article>
+              `;
+          } catch (error) {
+              console.error('Error fetching post:', error);
+              document.getElementById('postContainer').innerHTML = '<p>Error loading post.</p>';
+          }
+      }
+  
+      document.addEventListener('DOMContentLoaded', fetchPost);
+  </script>
+  
+  
+ </body>
+</html>
+
+
+

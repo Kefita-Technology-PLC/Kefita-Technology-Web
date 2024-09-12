@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kefita Technology</title>
+    <link rel="icon" type="image/x-icon" href="/images/KifetaLogo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/images/KifetaLogo.png" alt="" />
+        <h6>Kefita Technology P.L.C</h6>
+      </div>
+
+      <ul class="navlist">
+        <li><a href="Blog.html">Blog</a></li>
+        <li>
+          <a href="Home.html">Home</a>
+        </li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="servicedemo.html">Services</a></li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <div class="blog-container">
+      <!-- <div class="filerButton>Latest Posts</div> -->
+      
+      <div class="filerButton">
+        <button data-name="show-all" class="active">Latest Posts</button>
+        <!-- <button data-name="software">Software Development</button>
+        <button data-name="gps">GPS tracking</button>
+        <button data-name="consultancy">Latest Posts</button> -->
+        
+      </div> 
+    </div>
+    <div class="latest-post" id="cardsContainer"> </div>
+
+    <footer>
+      <section class="ftr-main">
+        <div class="ftr-items contact-info">
+          <h2>Contact Us</h2>
+          <ul>
+            <li>
+              <a href="tel:+251912345678"
+                ><i class="fa fa-phone"></i> +251 91 234 5678</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-map-marker"></i> Addis Ababa, Akaki Kality,
+                Cabey Building, 3rd Floor, Room 304</a
+              >
+            </li>
+            <li>
+              <a href="mailto:kefitatech@gmail.com"
+                ><i class="fa fa-envelope"></i> kefitatech@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="ftr-items links">
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="ftr-items social-media">
+          <h2>Follow Us</h2>
+          <ul class="ftr-list">
+            <li>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-telegram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="footer-bottom">
+        <p>&copy;2024 Kefita Technology PLC. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- <script src="blog.js"></script> -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const cardsContainer = document.getElementById('cardsContainer');
+
+          async function fetchBlogs() {
+              try {
+                  const response = await fetch('http://localhost:3000/blogs');
+                  const blogs = await response.json();
+
+                  cardsContainer.innerHTML = ''; // Clear the container
+
+                  blogs.forEach(blog => {
+                      const blogCard = document.createElement('div');
+                      blogCard.classList.add('blog-card'); // Add the CSS class
+
+                      blogCard.innerHTML = `
+                          <h3>${blog.title}</h3>
+                          <p>${blog.description}</p>
+                          <p>${new Date(blog.createdAt).toLocaleDateString()}</p>
+<a href="post.html?blogId=${blog._id}" target="_blank">Read More</a>
+                      `;
+
+                      cardsContainer.appendChild(blogCard); // Append the card to the container
+                  });
+              } catch (error) {
+                  console.error('Error fetching blogs:', error);
+              }
+          }
+
+          fetchBlogs();
+      });
+  </script>
+  </body>
+</html>
