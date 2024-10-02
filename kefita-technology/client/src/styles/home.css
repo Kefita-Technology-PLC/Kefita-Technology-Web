@@ -69,23 +69,19 @@
 .hero-container {
   margin: 10px auto;
   padding: 10px;
-
   width: 100%;
   background-color: #f2fffe;
-
   gap: 30px;
   margin-top: 70px;
   margin-bottom: 30px;
   @media (max-width: 1440px) {
     padding-left: 30px;
-
     padding-right: 30px;
   }
 }
 
 .hero-image {
   flex: 1;
-
   padding: 0px 30px;
   display: flex;
   justify-content: center;
@@ -141,54 +137,70 @@
 
 .subscription-form {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
 }
 
 .subscription-form input[type="email"] {
-  padding: 15px 20px;
+  padding: 20px 15px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  flex: 1;
-  min-width: 200px;
+  border-radius: 20px;
+  width: 90.5%;
+  height: 50px;
+  box-sizing: border-box;
 }
 
 .subscription-form button {
-  padding: 10px 20px;
+  position: relative;
+  left: 213px;
+  top: -25px;
+  transform: translateY(-50%);
+  padding: 0 20px;
   color: white;
   background-color: #2970c7;
   border: none;
-  margin-top: 10px;
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
   cursor: pointer;
+  font-size: 16px;
+  height: 50.5px;
+  line-height: 50px;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
-.subscription-form button:hover {
-  background-color: #1b73d1;
+#message {
+  color: green;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
-  .content h1 {
-    font-size: 24px;
-  }
-
-  .content p {
-    font-size: 18px;
-  }
-
   .subscription-form {
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 
   .subscription-form input[type="email"] {
-    padding: 12px 15px;
-    font-size: 14px;
+    width: calc(100% - 30px);
+    margin-bottom: 10px;
   }
 
   .subscription-form button {
-    padding: 8px 16px;
+    position: relative;
+    width: 25%;
+    left: 153px;
+    margin-top: -10px;
+    border-radius: 0 20px 20px 0;
+    height: 50.5px;
   }
 }
 
@@ -197,7 +209,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 5rem;
-
   padding: 6% 5%;
   margin-left: auto;
   margin-right: auto;
@@ -208,7 +219,6 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
-
   text-align: center;
 }
 .Testimonial-card {
@@ -269,7 +279,6 @@
 }
 .partnership-title {
   position: relative;
-  /* top: 5px; */
   margin-left: auto;
   margin-right: auto;
   bottom: 10px;
