@@ -5,6 +5,9 @@ const upload = require("./middleware/multerConfig"); // Import multer config
 const Blog = require("./model/DBmodel"); // Import Blog model
 const cors = require('cors'); // Import CORS
 
+require('dotenv').config(); // Ensure this is the first line
+
+
 
 
 const app = express();
@@ -13,11 +16,16 @@ app.use(cors());
 
 // Your other routes and middleware
 app.use(express.json());
-// Connect to MongoDB without deprecated options
-mongoose.connect('mongodb+srv://kefitatech:Q2Ny25U2y0ExrK6O@blogsdb.7h88x.mongodb.net/?retryWrites=true&w=majority&appName=BlogsDB')
-.then(() => console.log('MongoDB connected successfully'))
-    .catch((err) => console.error('MongoDB connection error:', err));
 
+
+// Connect to MongoDB without deprecated options]
+
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch((err) => console.error('MongoDB connection error:', err));
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
